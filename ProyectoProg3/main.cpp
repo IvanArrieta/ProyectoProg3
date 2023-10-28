@@ -20,18 +20,20 @@ int main() {
         int deposito3;
         int deposito4;
         int deposito5;
+        int totalDepositos; // Atributo para almacenar la suma de todos los depósitos
 
-        // Constructor para inicializar los atributos del objeto Producto
-
+        // Constructor para inicializar los atributos del objeto Producto y calcular la suma de los depósitos
         Producto(string grupo, string codigoDeBarra, string articulo,
                  int deposito1, int deposito2, int deposito3, int deposito4, int deposito5)
                 : grupo(grupo), codigoDeBarra(codigoDeBarra), articulo(articulo),
                   deposito1(deposito1), deposito2(deposito2), deposito3(deposito3),
-                  deposito4(deposito4), deposito5(deposito5) {}
+                  deposito4(deposito4), deposito5(deposito5) {
+            totalDepositos = deposito1 + deposito2 + deposito3 + deposito4 + deposito5;
+        }
     };
 
 
-    std::ifstream archivo("C:\\Users\\geronimo\\OneDrive\\Escritorio\\PROGRAMACION_III\\parcial-2-a-o-2023-Geronimo2001\\Inventariado Fisico.csv"); // Reemplaza "archivo.csv" con el nombre de tu archivo CSV
+    std::ifstream archivo("ProyectoProg3/Inventariado Fisico.csv"); // Reemplaza "archivo.csv" con el nombre de tu archivo CSV
     std::vector<Producto> productosvec;
 
     if (archivo.is_open()) {
@@ -69,10 +71,10 @@ int main() {
 
         }
     }
-        archivo.close();
+    archivo.close();
     cout<<productosvec[2].grupo;
+    int i=0;
     for (const auto& product : productosvec) {
-       // int acumulador = 0;
 /*
         cout << "Grupo: " << product.grupo << endl;
         cout << "Codigo de Barra: " << product.codigoDeBarra << endl;
@@ -83,21 +85,12 @@ int main() {
         cout << "Producto 4: " << product.deposito4 << endl;
         cout << "Producto 5: " << product.deposito5 << endl;
         cout << "--------------------" << endl;*/
-    //  acumulador=  product.deposito1 + product.deposito2 + product.deposito3 + product.deposito4 + product.deposito5;
-     //   Cantidadtotart.put(acumulador);
 
+        Cantidadtotart.put(product.totalDepositos);
+        i++;
     }
-      //  cout<< "*****"<<productosvec[230].deposito5<<"*****";
- //   for (const auto &deposito : productosvec) {
-    //}
+    Cantidadtotart.print();
+    cout<< Cantidadtotart.contarNodos();
 
-
-/*
-    for (const auto &deposito : productosvec) {
-        Cantidadtotart.put(deposito.deposito1 + deposito.deposito2 + deposito.deposito3 + deposito.deposito4 + deposito.deposito5);
-      //  cout << deposito.deposito1 + deposito.deposito2 + deposito.deposito3 + deposito.deposito4 + deposito.deposito5 << endl;
-
-    }*/
 
 }
-
