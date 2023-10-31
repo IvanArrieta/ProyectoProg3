@@ -124,36 +124,19 @@ int main() {
 
 
     }
-  
-
-
-
-    // Coloca aquí el código que deseas medir
-    // Por ejemplo:
-
-
-    // Registra el tiempo de finalización
-
-
 /*
 
     cout << Cantidadtotart.contarNodos() << endl;
-
-
-
+    cout<<Cantidadtotart.sumarNodos()<<endl;
     cout<<Cantidadtotart.contarNodosMenoresAlValor(1)<<endl;
     cout<<ardeposito4.contarNodosMenoresAlValor(1)<<endl;
     cout<<Cantidadtotart.contarNodosMayoresAlValor(84)<<endl;
-    // Cantidadtotart.printpar();
 
 
-    cout<<Cantidadtotart.sumarNodos()<<endl;
+
+
 
 */
-
-
-
-
      int opcion;
      do {
          cout << "\nMENU:" << endl;
@@ -210,17 +193,6 @@ int main() {
              cout << "Opcion invalida. Intente nuevamente." << endl;
          }
 
-
-         // cout << "La cantidad de nodos mayores al valor es: " << contmayores << endl;
-
-         // cout << "La suma de los nodos es: " << sumar << endl;
-
-         // Calcula la duración en microsegundos y la imprime
-
-
- }while (opcion != 0);
-
-
-
+                }while (opcion != 0);
 
 }
