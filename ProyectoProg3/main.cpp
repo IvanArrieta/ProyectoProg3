@@ -46,19 +46,17 @@ int main() {
     ArbolBinarioAVL<pair<int, string >> ardeposito4;
     ArbolBinarioAVL<pair<int, string >> ardeposito5;
     pair<int, string> total_articulo;
-    pair<int, string> deposito1;
-    pair<int, string> deposito2;
-    pair<int, string> deposito3;
-    pair<int, string> deposito4;
-    pair<int, string> deposito5;
-    int i = 0;
+    pair<int, string> Deposito1;
+    pair<int, string> Deposito2;
+    pair<int, string> Deposito3;
+    pair<int, string> Deposito4;
+    pair<int, string> Deposito5;
 
-    std::ifstream archivo(
-            "C:\\Users\\geronimo\\OneDrive\\Escritorio\\proyectopro3git\\ProyectoProg3\\ProyectoProg3\\Inventariado Fisico.csv");
+    std::ifstream archivo("C:\\Users\\geronimo\\OneDrive\\Escritorio\\proyectopro3git\\ProyectoProg3\\ProyectoProg3\\Inventariado Fisico.csv");
     std::vector<Producto> productosvec;
 
 
-
+int i=0;
     if (archivo.is_open()) {
         std::string linea;
         while (std::getline(archivo, linea)) {
@@ -92,38 +90,38 @@ int main() {
 
             // Agrega el objeto a la lista de productos
             productosvec.push_back(nuevoProducto);
+        total_articulo.first= productosvec[i].totalDepositos;
+        total_articulo.second= productosvec[i].articulo;
+        Deposito1.first= productosvec[i].deposito1;
+        Deposito1.second= productosvec[i].articulo;
+        Deposito2.first= productosvec[i].deposito2;
+        Deposito2.second= productosvec[i].articulo;
+        Deposito3.first= productosvec[i].deposito3;
+        Deposito3.second= productosvec[i].articulo;
+        Deposito4.first= productosvec[i].deposito4;
+        Deposito4.second= productosvec[i].articulo;
+        Deposito5.first= productosvec[i].deposito5;
+        Deposito5.second= productosvec[i].articulo;
 
-
+            Cantidadtotart.put(total_articulo);
+            ardeposito1.put(Deposito1);
+            ardeposito2.put(Deposito2);
+            ardeposito3.put(Deposito3);
+            ardeposito4.put(Deposito4);
+            ardeposito5.put(Deposito5);
+            i++;
         }
     }
     archivo.close();
 
 
-    for (const auto &product: productosvec) {
-        // Crea un total_articulo (totalDepositos, articulo) y lo agrega al árbol
-        total_articulo.first = product.totalDepositos;
-        total_articulo.second = product.articulo;
-        deposito1.first = product.deposito1;
-        deposito1.second = product.articulo;
-        deposito2.first = product.deposito2;
-        deposito2.second = product.articulo;
-        deposito3.first = product.deposito3;
-        deposito3.second = product.articulo;
-        deposito4.first = product.deposito4;
-        deposito4.second = product.articulo;
-        deposito5.first = product.deposito5;
-        deposito5.second = product.articulo;
 
 
-        Cantidadtotart.put(total_articulo);
-        ardeposito1.put(deposito1);
-        ardeposito2.put(deposito2);
-        ardeposito3.put(deposito3);
-        ardeposito4.put(deposito4);
-        ardeposito5.put(deposito5);
 
 
-    }
+
+
+
 /*
 
     cout << Cantidadtotart.contarNodos() << endl;
