@@ -115,13 +115,6 @@ int i=0;
     archivo.close();
 
 
-
-
-
-
-
-
-
 /*
 
     cout << Cantidadtotart.contarNodos() << endl;
