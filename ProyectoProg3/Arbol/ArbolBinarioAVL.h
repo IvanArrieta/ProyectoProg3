@@ -31,6 +31,7 @@ public:
     bool esVacio();
 
     void print();
+    void printpar();
 
     int getBalance()
     {
@@ -39,8 +40,9 @@ public:
     int contarPorNivel( int nivelDeseado);
     NodoArbolAVL<T>* crearEspejo();
     int contarNodos();
-    int contarNodosMenoresAlValor(T valor);
-    T sumarNodos();
+    int contarNodosMenoresAlValor(int valor);
+    int sumarNodos();
+    int contarNodosMayoresAlValor(int valor);
 
 private:
     T search(T data, NodoArbolAVL<T> *r);
@@ -60,10 +62,44 @@ private:
     int contarporNivel(NodoArbolAVL<T> *raiz, int nivelDeseado);
     NodoArbolAVL<T>* crearespejo(NodoArbolAVL<T>* root);
     int contarNodos(NodoArbolAVL<T>* r);
-    int contarNodosMenoresAlValor(NodoArbolAVL<T>* r, T valor);
-    T sumarNodos(NodoArbolAVL<T>* r);
+    int contarNodosMenoresAlValor(NodoArbolAVL<T>* r, int valor);
+    int sumarNodos(NodoArbolAVL<T>* r);
+    int contarNodosMayoresAlValor(NodoArbolAVL<T>* r, int valor);
 
 };
+
+
+
+template<class T>
+int ArbolBinarioAVL<T>::contarNodosMayoresAlValor(int valor) {
+    return contarNodosMayoresAlValor(root, valor);
+
+}
+template<class T>
+int ArbolBinarioAVL<T>::contarNodosMayoresAlValor(NodoArbolAVL<T> *r, int valor) {
+    if (r == nullptr) {
+        return 0;
+    }
+
+    int count = 0;
+    if (r->getData().first >= valor) {
+        count = 1;
+        cout<<r->getData().second<<endl;
+    }
+
+    // Contar los nodos menores al valor en el subárbol izquierdo y derecho
+    count += contarNodosMayoresAlValor(r->getLeft(), valor) + contarNodosMayoresAlValor(r->getRight(), valor);
+    return count;
+
+}
+
+
+template<class T>
+void ArbolBinarioAVL<T>::printpar() {
+    if (root != NULL)
+        root->printPar(true, "");
+
+}
 
 template<class T>
 NodoArbolAVL<T> *ArbolBinarioAVL<T>::crearEspejo() {
@@ -175,7 +211,7 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::put(T data, NodoArbolAVL<T> *r)
 
     if (r->getData() == data)
     {
-        throw 405;
+        r->setLeft(put(data, r->getLeft()));
     }
 
     if (r->getData() > data)
@@ -497,39 +533,40 @@ int ArbolBinarioAVL<T>::contarNodos(NodoArbolAVL<T>* r) {
     return 1 + contarNodos(r->getLeft()) + contarNodos(r->getRight());
 }
 template<class T>
-int ArbolBinarioAVL<T>::contarNodosMenoresAlValor(T valor) {
+int ArbolBinarioAVL<T>::contarNodosMenoresAlValor(int valor) {
     return contarNodosMenoresAlValor(root, valor);
 }
 
 template<class T>
-int ArbolBinarioAVL<T>::contarNodosMenoresAlValor(NodoArbolAVL<T>* r, T valor) {
+int ArbolBinarioAVL<T>::contarNodosMenoresAlValor(NodoArbolAVL<T>* r, int valor) {
     if (r == nullptr) {
         return 0;
     }
 
     int count = 0;
-    if (r->getData() <= valor) {
+    if (r->getData().first <= valor) {
         count = 1;
+        cout<<r->getData().second<<endl;
     }
 
     // Contar los nodos menores al valor en el subárbol izquierdo y derecho
     count += contarNodosMenoresAlValor(r->getLeft(), valor) + contarNodosMenoresAlValor(r->getRight(), valor);
-
+//cout<<count;
     return count;
 }
 template<class T>
-T ArbolBinarioAVL<T>::sumarNodos() {
+int ArbolBinarioAVL<T>::sumarNodos() {
     return sumarNodos(root);
 }
 
 template<class T>
-T ArbolBinarioAVL<T>::sumarNodos(NodoArbolAVL<T>* r) {
+int ArbolBinarioAVL<T>::sumarNodos(NodoArbolAVL<T>* r) {
     if (r == nullptr) {
         return 0;
     }
 
     // Sumar el valor del nodo actual con la suma de los nodos en el subárbol izquierdo y derecho
-    T suma = r->getData();
+    int suma = r->getData().first;
     suma += sumarNodos(r->getLeft());
     suma += sumarNodos(r->getRight());
 

@@ -1,3 +1,3 @@
-C:/Users/geronimo/OneDrive/Escritorio/PROGRAMACION_III/ProyectoProg3/cmake-build-debug/CMakeFiles/U00-E06.dir
-C:/Users/geronimo/OneDrive/Escritorio/PROGRAMACION_III/ProyectoProg3/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/geronimo/OneDrive/Escritorio/PROGRAMACION_III/ProyectoProg3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/geronimo/OneDrive/Escritorio/proyectopro3git/ProyectoProg3/ProyectoProg3/cmake-build-debug/CMakeFiles/U00-E06.dir
+C:/Users/geronimo/OneDrive/Escritorio/proyectopro3git/ProyectoProg3/ProyectoProg3/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/geronimo/OneDrive/Escritorio/proyectopro3git/ProyectoProg3/ProyectoProg3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

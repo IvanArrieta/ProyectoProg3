@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/geronimo/OneDrive/Escritorio/PROGRAMACION_III/ProyectoProg3
+# Install script for directory: C:/Users/geronimo/OneDrive/Escritorio/proyectopro3git/ProyectoProg3/ProyectoProg3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/segundoparcial")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/proyecto")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/geronimo/OneDrive/Escritorio/PROGRAMACION_III/ProyectoProg3/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/geronimo/OneDrive/Escritorio/proyectopro3git/ProyectoProg3/ProyectoProg3/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
