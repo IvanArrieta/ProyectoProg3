@@ -1,8 +1,9 @@
 #ifndef U05_ARBOL_ARBOL_NODOARBOL_H_
 #define U05_ARBOL_ARBOL_NODOARBOL_H_
-
+#include "iostream"
 #include <string.h>
 using namespace std;
+
 
 template <class T>
 class NodoArbol

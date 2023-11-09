@@ -69,14 +69,8 @@ public:
         if (right != NULL) {
             right->print(true, identacion + (esDerecho ? "     " : "|    "));
         }
-        cout << identacion;
-        if (esDerecho) {
-            cout << " /";
-        } else {
-            cout << " \\";
-        }
-        cout << "-- ";
-        cout << data << endl;
+
+        cout <<"CANTIDAD: "<<data.first<<"      ARTICULO: "<<data.second << endl;
         if (left != NULL) {
             left->print(false, identacion + (esDerecho ? "|    " : "     "));
         }
